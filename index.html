@@ -618,29 +618,18 @@
 
   <script>
     (function() {
-      // --- Музыка ---
+      // --- Музыка (автозапуск) ---
       const bgMusic = document.getElementById('bgMusic');
       const musicToggle = document.getElementById('musicToggle');
       const musicIcon = document.getElementById('musicIcon');
       const musicText = document.getElementById('musicText');
 
-      // Устанавливаем громкость 5% (0.05)
+      // Громкость 5%
       bgMusic.volume = 0.05;
       
       let musicPlaying = false;
 
-      // Попытка автоматического воспроизведения (браузеры могут блокировать)
-      function tryAutoPlay() {
-        bgMusic.play().then(() => {
-          musicPlaying = true;
-          updateMusicButton();
-        }).catch(() => {
-          // Автовоспроизведение заблокировано, показываем кнопку "включить"
-          musicPlaying = false;
-          updateMusicButton();
-        });
-      }
-
+      // Функция обновления иконки кнопки
       function updateMusicButton() {
         if (musicPlaying) {
           musicIcon.className = 'fas fa-volume-up';
@@ -651,7 +640,30 @@
         }
       }
 
-      musicToggle.addEventListener('click', () => {
+      // Попытка автоматического воспроизведения сразу
+      function attemptAutoPlay() {
+        bgMusic.play().then(() => {
+          musicPlaying = true;
+          updateMusicButton();
+        }).catch(() => {
+          // Автовоспроизведение заблокировано браузером
+          musicPlaying = false;
+          updateMusicButton();
+          // Добавляем однократный слушатель на весь документ, чтобы запустить при первом клике
+          document.body.addEventListener('click', function startOnInteraction() {
+            if (!musicPlaying) {
+              bgMusic.play().then(() => {
+                musicPlaying = true;
+                updateMusicButton();
+              }).catch(() => {});
+            }
+          }, { once: true });
+        });
+      }
+
+      // Ручное управление кнопкой
+      musicToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // чтобы не сработал глобальный обработчик клика
         if (musicPlaying) {
           bgMusic.pause();
           musicPlaying = false;
@@ -662,29 +674,19 @@
             console.warn('Не удалось воспроизвести:', err);
             musicPlaying = false;
           });
-          musicPlaying = true; // оптимистично
+          musicPlaying = true; // оптимистичное переключение
         }
         updateMusicButton();
-        // Дополнительно синхронизируем после play/pause
+        // Синхронизация состояния через небольшую задержку
         setTimeout(() => {
-          if (bgMusic.paused) musicPlaying = false;
-          else musicPlaying = true;
+          musicPlaying = !bgMusic.paused;
           updateMusicButton();
         }, 50);
       });
 
-      // Обработчик окончания загрузки страницы для автостарта
+      // Запускаем автоматическое воспроизведение при загрузке
       window.addEventListener('load', () => {
-        tryAutoPlay();
-        // Дополнительно: разрешить запуск по первому клику в любом месте, если заблокировано
-        document.body.addEventListener('click', function initMusic() {
-          if (!musicPlaying && bgMusic.paused) {
-            bgMusic.play().then(() => {
-              musicPlaying = true;
-              updateMusicButton();
-            }).catch(() => {});
-          }
-        }, { once: true });
+        attemptAutoPlay();
       });
 
       // --- Калькулятор ---
