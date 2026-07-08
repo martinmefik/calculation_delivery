@@ -19,7 +19,7 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f9fafc; /* Очень мягкий фон */
+      background: #f9fafc;
       background-image: radial-gradient(circle at 30% 10%, rgba(226, 232, 240, 0.4) 0%, transparent 40%);
       color: #1e293b;
       line-height: 1.5;
@@ -29,6 +29,52 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
+    }
+
+    /* Кнопка управления музыкой */
+    .music-toggle {
+      position: fixed;
+      bottom: 1.8rem;
+      right: 1.8rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid #e2e8f0;
+      border-radius: 3rem;
+      padding: 0.7rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      font-weight: 550;
+      font-size: 0.9rem;
+      color: #334155;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+      z-index: 999;
+      transition: all 0.25s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .music-toggle:hover {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      box-shadow: 0 16px 28px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .music-toggle i {
+      font-size: 1.2rem;
+      color: #0f172a;
+    }
+
+    @media (max-width: 600px) {
+      .music-toggle {
+        bottom: 1.2rem;
+        right: 1.2rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+      }
     }
 
     .site-container {
@@ -56,7 +102,13 @@
       }
     }
 
-    /* Плавные переходы для всех элементов */
+    @media (max-width: 400px) {
+      .site-container {
+        padding: 1.5rem 1rem;
+        border-radius: 2.2rem;
+      }
+    }
+
     * {
       transition: all 0.25s ease;
     }
@@ -99,6 +151,12 @@
       margin-bottom: 0.4rem;
     }
 
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+
     .subtitle {
       font-size: 1.2rem;
       font-weight: 500;
@@ -108,14 +166,21 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
-    /* Преимущества – мягкие карточки */
     .advantages-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1.1rem;
       margin: 2.4rem 0 2.8rem;
+    }
+
+    @media (max-width: 480px) {
+      .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+      }
     }
 
     .advantage-card {
@@ -143,13 +208,13 @@
 
     .advantage-card h3 {
       font-weight: 650;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       margin-bottom: 0.3rem;
       color: #1e293b;
     }
 
     .advantage-card p {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #64748b;
       font-weight: 500;
     }
@@ -176,6 +241,12 @@
       gap: 0.6rem;
     }
 
+    @media (max-width: 500px) {
+      .route-header h2 {
+        font-size: 1.4rem;
+      }
+    }
+
     .map-link {
       background: #ffffff;
       padding: 0.6rem 1.4rem;
@@ -189,6 +260,7 @@
       gap: 0.5rem;
       box-shadow: 0 6px 14px rgba(0,0,0,0.03);
       border: 1px solid #e9eef3;
+      white-space: nowrap;
     }
 
     .map-link:hover {
@@ -202,7 +274,6 @@
       color: #ef4444;
     }
 
-    /* Калькулятор – мягкий стиль */
     .calculator {
       background: #fcfcfd;
       border-radius: 2.5rem;
@@ -213,15 +284,17 @@
       background: #ffffff;
     }
 
+    @media (max-width: 500px) {
+      .calculator {
+        padding: 1.8rem 1.2rem;
+      }
+    }
+
     .distance-inputs {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       margin-bottom: 1.8rem;
-    }
-
-    .input-group {
-      width: 100%;
     }
 
     .input-group label {
@@ -263,14 +336,12 @@
       color: #0f172a;
     }
 
-    /* Стилизация плейсхолдера */
     .input-wrapper input::placeholder {
       color: #94a3b8;
       font-weight: 400;
       font-size: 0.95rem;
       opacity: 0.8;
       letter-spacing: 0.2px;
-      transition: opacity 0.2s;
     }
 
     .input-wrapper input:focus::placeholder {
@@ -303,6 +374,14 @@
       gap: 1.3rem 2.2rem;
       margin: 1.8rem 0 2rem;
       align-items: center;
+    }
+
+    @media (max-width: 550px) {
+      .checkboxes {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
     }
 
     .checkbox-option {
@@ -346,6 +425,14 @@
       border: 1px solid #edf2f7;
     }
 
+    @media (max-width: 500px) {
+      .total-block {
+        padding: 1.2rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
     .total-label {
       font-weight: 600;
       font-size: 1.1rem;
@@ -361,6 +448,12 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+    }
+
+    @media (max-width: 500px) {
+      .total-amount {
+        font-size: 2rem;
+      }
     }
 
     .reset-btn {
@@ -395,26 +488,22 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
     hr {
       border: 0.5px solid #f1f5f9;
       margin: 2rem 0 1rem;
     }
-
-    @media (max-width: 500px) {
-      .checkboxes {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.7rem;
-      }
-      .total-amount {
-        font-size: 2.2rem;
-      }
-    }
   </style>
 </head>
 <body>
+  <!-- Кнопка управления музыкой -->
+  <div class="music-toggle" id="musicToggle">
+    <i class="fas fa-volume-up" id="musicIcon"></i>
+    <span id="musicText">Выкл. музыку</span>
+  </div>
+
   <div class="site-container">
     
     <!-- Шапка -->
@@ -428,37 +517,37 @@
       </div>
     </div>
 
-    <!-- Преимущества (мягкие) -->
+    <!-- Преимущества -->
     <div class="advantages-grid">
       <div class="advantage-card">
         <i class="fas fa-user-check"></i>
         <h3>Самозанятый</h3>
-        <p>Работаю лично, без посредников</p>
+        <p>Работаю лично</p>
       </div>
       <div class="advantage-card">
         <i class="fas fa-hand-sparkles"></i>
-        <h3>Бережное отношение</h3>
-        <p>Аккуратная перевозка</p>
+        <h3>Бережно</h3>
+        <p>Аккуратно с грузом</p>
       </div>
       <div class="advantage-card">
         <i class="fas fa-clock"></i>
-        <h3>24/7 и срочно</h3>
-        <p>Ночные и экспресс-заказы</p>
+        <h3>24/7</h3>
+        <p>Срочные заказы</p>
       </div>
       <div class="advantage-card">
         <i class="fas fa-comment-dots"></i>
-        <h3>Постоянная связь</h3>
-        <p>На связи на всём маршруте</p>
+        <h3>Связь</h3>
+        <p>Всегда на связи</p>
       </div>
       <div class="advantage-card">
         <i class="fas fa-wallet"></i>
-        <h3>Оплата по факту</h3>
-        <p>Вы платите после получения</p>
+        <h3>Оплата</h3>
+        <p>По факту</p>
       </div>
       <div class="advantage-card">
         <i class="fas fa-map-pin"></i>
-        <h3>МСК и область</h3>
-        <p>Честные тарифы 50₽/км</p>
+        <h3>МСК|МО</h3>
+        <p>50₽/км</p>
       </div>
     </div>
 
@@ -469,7 +558,7 @@
           <i class="fas fa-route" style="color: #334155;"></i> Расчет маршрута
         </h2>
         <a href="https://yandex.ru/maps/213/moscow/?ll=37.684143%2C55.740954&mode=routes&rtext=&rtt=auto&z=14" target="_blank" rel="noopener noreferrer" class="map-link">
-          <i class="fas fa-map-marked-alt"></i> Построить в Яндекс.Картах
+          <i class="fas fa-map-marked-alt"></i> Яндекс.Карты
         </a>
       </div>
       <p style="color: #475569; margin-bottom: 0.3rem; font-weight: 500; font-size: 0.95rem;">
@@ -477,13 +566,12 @@
       </p>
     </div>
 
-    <!-- Калькулятор (только одно поле) -->
+    <!-- Калькулятор -->
     <div class="calculator">
       <div class="distance-inputs">
         <div class="input-group">
           <label><i class="fas fa-map-pin" style="color: #2563eb;"></i> Доставка МСК|МО</label>
           <div class="input-wrapper">
-            <!-- Плейсхолдеры с примерами, которые не мешают вводу -->
             <input type="number" id="kmDistance" placeholder="например 12.5 или 45" min="0" step="0.1">
             <span>50 ₽/км</span>
           </div>
@@ -491,7 +579,6 @@
         </div>
       </div>
 
-      <!-- Галочки доп. услуг -->
       <div class="checkboxes">
         <label class="checkbox-option">
           <input type="checkbox" id="urgentCheck">
@@ -503,11 +590,10 @@
         </label>
         <label class="checkbox-option">
           <input type="checkbox" id="nightCheck">
-          <span>🌙 Ночная доставка <strong>+300 ₽</strong> (22:00–07:00)</span>
+          <span>🌙 Ночная доставка <strong>+300 ₽</strong></span>
         </label>
       </div>
 
-      <!-- Итог -->
       <div class="total-block">
         <span class="total-label">💎 Итого к оплате:</span>
         <span class="total-amount" id="totalPrice">0 ₽</span>
@@ -524,9 +610,84 @@
     </div>
   </div>
 
+  <!-- Аудио элемент -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
+
   <script>
     (function() {
-      // DOM элементы
+      // --- Музыка ---
+      const bgMusic = document.getElementById('bgMusic');
+      const musicToggle = document.getElementById('musicToggle');
+      const musicIcon = document.getElementById('musicIcon');
+      const musicText = document.getElementById('musicText');
+
+      // Устанавливаем громкость 5% (0.05)
+      bgMusic.volume = 0.05;
+      
+      let musicPlaying = false;
+
+      // Попытка автоматического воспроизведения (браузеры могут блокировать)
+      function tryAutoPlay() {
+        bgMusic.play().then(() => {
+          musicPlaying = true;
+          updateMusicButton();
+        }).catch(() => {
+          // Автовоспроизведение заблокировано, показываем кнопку "включить"
+          musicPlaying = false;
+          updateMusicButton();
+        });
+      }
+
+      function updateMusicButton() {
+        if (musicPlaying) {
+          musicIcon.className = 'fas fa-volume-up';
+          musicText.textContent = 'Выкл. музыку';
+        } else {
+          musicIcon.className = 'fas fa-volume-mute';
+          musicText.textContent = 'Вкл. музыку';
+        }
+      }
+
+      musicToggle.addEventListener('click', () => {
+        if (musicPlaying) {
+          bgMusic.pause();
+          musicPlaying = false;
+        } else {
+          bgMusic.play().then(() => {
+            musicPlaying = true;
+          }).catch(err => {
+            console.warn('Не удалось воспроизвести:', err);
+            musicPlaying = false;
+          });
+          musicPlaying = true; // оптимистично
+        }
+        updateMusicButton();
+        // Дополнительно синхронизируем после play/pause
+        setTimeout(() => {
+          if (bgMusic.paused) musicPlaying = false;
+          else musicPlaying = true;
+          updateMusicButton();
+        }, 50);
+      });
+
+      // Обработчик окончания загрузки страницы для автостарта
+      window.addEventListener('load', () => {
+        tryAutoPlay();
+        // Дополнительно: разрешить запуск по первому клику в любом месте, если заблокировано
+        document.body.addEventListener('click', function initMusic() {
+          if (!musicPlaying && bgMusic.paused) {
+            bgMusic.play().then(() => {
+              musicPlaying = true;
+              updateMusicButton();
+            }).catch(() => {});
+          }
+        }, { once: true });
+      });
+
+      // --- Калькулятор ---
       const kmInput = document.getElementById('kmDistance');
       const urgentCheck = document.getElementById('urgentCheck');
       const weekendCheck = document.getElementById('weekendCheck');
@@ -534,53 +695,42 @@
       const totalSpan = document.getElementById('totalPrice');
       const resetBtn = document.getElementById('resetBtn');
 
-      // Тарифы
-      const RATE_PER_KM = 50; // единая ставка 50 руб/км
+      const RATE_PER_KM = 50;
       const URGENT_FEE = 500;
       const WEEKEND_FEE = 200;
       const NIGHT_FEE = 300;
 
-      // Получение числа из инпута
       function getKmValue() {
         const raw = kmInput.value.trim();
         if (raw === '') return 0;
-        // Заменяем запятую на точку
         const parsed = parseFloat(raw.replace(',', '.'));
         return isNaN(parsed) ? 0 : Math.max(0, parsed);
       }
 
-      // Расчет итога
       function calculateTotal() {
         const km = getKmValue();
         let total = km * RATE_PER_KM;
-
         if (urgentCheck.checked) total += URGENT_FEE;
         if (weekendCheck.checked) total += WEEKEND_FEE;
         if (nightCheck.checked) total += NIGHT_FEE;
-
-        // Форматирование
         const formatted = total % 1 === 0 ? total.toFixed(0) : total.toFixed(2);
         totalSpan.textContent = formatted + ' ₽';
       }
 
-      // Сброс
       function resetCalculator() {
-        kmInput.value = ''; // очищаем, чтобы снова показывался плейсхолдер
+        kmInput.value = '';
         urgentCheck.checked = false;
         weekendCheck.checked = false;
         nightCheck.checked = false;
         calculateTotal();
-        // небольшая задержка для плавности, но не обязательно
       }
 
-      // Слушатели событий
       kmInput.addEventListener('input', calculateTotal);
       urgentCheck.addEventListener('change', calculateTotal);
       weekendCheck.addEventListener('change', calculateTotal);
       nightCheck.addEventListener('change', calculateTotal);
       resetBtn.addEventListener('click', resetCalculator);
 
-      // Дополнительно: убираем минусовые значения при ручном вводе
       kmInput.addEventListener('change', function() {
         if (kmInput.value && parseFloat(kmInput.value) < 0) {
           kmInput.value = '';
@@ -588,7 +738,6 @@
         calculateTotal();
       });
 
-      // Инициализация
       calculateTotal();
     })();
   </script>
