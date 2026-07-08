@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Доставка на Skoda Octavia | Москва и МО</title>
-  <!-- Подключаем элегантный шрифт -->
+  <!-- Современный мягкий шрифт -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <!-- Font Awesome для иконок -->
+  <!-- Иконки -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -19,7 +19,8 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(145deg, #f5f7fa 0%, #eef0f5 100%);
+      background: #f9fafc; /* Очень мягкий фон */
+      background-image: radial-gradient(circle at 30% 10%, rgba(226, 232, 240, 0.4) 0%, transparent 40%);
       color: #1e293b;
       line-height: 1.5;
       min-height: 100vh;
@@ -31,17 +32,18 @@
     }
 
     .site-container {
-      max-width: 850px;
+      max-width: 820px;
       width: 100%;
       margin: 0 auto;
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       background: #ffffff;
-      border-radius: 3.5rem;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), 0 10px 25px rgba(0, 20, 40, 0.06);
-      padding: 2.5rem 2.8rem;
+      border-radius: 3.8rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(0, 20, 40, 0.03);
+      padding: 2.8rem 2.8rem;
       transition: all 0.3s ease;
+      border: 1px solid rgba(226, 232, 240, 0.6);
     }
 
     @media (max-width: 600px) {
@@ -49,90 +51,101 @@
         padding: 0.8rem;
       }
       .site-container {
-        padding: 1.8rem 1.5rem;
-        border-radius: 2.5rem;
+        padding: 2rem 1.5rem;
+        border-radius: 2.8rem;
       }
     }
 
-    /* Hero / Заголовок */
+    /* Плавные переходы для всех элементов */
+    * {
+      transition: all 0.25s ease;
+    }
+
     .hero {
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.8rem;
     }
 
     .car-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: #1e293b;
-      color: white;
-      padding: 0.5rem 1.4rem;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 0.5rem 1.5rem;
       border-radius: 3rem;
       font-weight: 600;
       font-size: 0.9rem;
-      letter-spacing: 0.5px;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+      letter-spacing: 0.4px;
+      margin-bottom: 1.6rem;
+      background: #ffffff;
+      border: 1px solid #e9eef3;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
     }
 
     .car-badge i {
-      color: #fbbf24;
+      color: #f59e0b;
       font-size: 1rem;
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.9rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
-      background: linear-gradient(to right, #0f172a, #334155);
+      letter-spacing: -0.8px;
+      background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .subtitle {
       font-size: 1.2rem;
       font-weight: 500;
-      color: #475569;
+      color: #64748b;
       margin-bottom: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
+      gap: 0.5rem;
     }
 
-    /* Сетка преимуществ */
+    /* Преимущества – мягкие карточки */
     .advantages-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.2rem;
-      margin: 2.2rem 0 2.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1.1rem;
+      margin: 2.4rem 0 2.8rem;
     }
 
     .advantage-card {
-      background: #f8fafc;
-      border-radius: 1.8rem;
-      padding: 1.2rem 1rem;
+      background: #f9fafc;
+      border-radius: 2rem;
+      padding: 1.3rem 0.8rem;
       text-align: center;
-      transition: all 0.2s;
-      border: 1px solid #e9eef3;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      border: 1px solid #f1f5f9;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+      background: #ffffff;
+    }
+
+    .advantage-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.04);
+      border-color: #e2e8f0;
     }
 
     .advantage-card i {
       font-size: 2rem;
-      color: #0f172a;
-      margin-bottom: 0.6rem;
-      opacity: 0.9;
+      color: #334155;
+      margin-bottom: 0.7rem;
+      opacity: 0.85;
     }
 
     .advantage-card h3 {
-      font-weight: 700;
+      font-weight: 650;
       font-size: 0.95rem;
       margin-bottom: 0.3rem;
-      color: #0f172a;
+      color: #1e293b;
     }
 
     .advantage-card p {
@@ -141,9 +154,8 @@
       font-weight: 500;
     }
 
-    /* Разделитель с картой */
     .route-section {
-      margin: 2rem 0 2.5rem;
+      margin: 2.2rem 0 2.2rem;
     }
 
     .route-header {
@@ -152,125 +164,144 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .route-header h2 {
       font-size: 1.7rem;
-      font-weight: 700;
+      font-weight: 680;
       color: #0f172a;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
     .map-link {
-      background: white;
+      background: #ffffff;
       padding: 0.6rem 1.4rem;
       border-radius: 2.5rem;
-      font-weight: 600;
+      font-weight: 550;
       font-size: 0.9rem;
-      color: #0f172a;
+      color: #1e293b;
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
-      border: 1px solid #e2e8f0;
-      transition: all 0.2s;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+      border: 1px solid #e9eef3;
     }
 
     .map-link:hover {
-      background: #f1f5f9;
+      background: #f8fafc;
       border-color: #cbd5e1;
       transform: translateY(-1px);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.04);
     }
 
     .map-link i {
-      color: #dc2626;
+      color: #ef4444;
     }
 
-    /* Калькулятор */
+    /* Калькулятор – мягкий стиль */
     .calculator {
-      background: #f8fafc;
+      background: #fcfcfd;
       border-radius: 2.5rem;
-      padding: 2rem 2rem 1.8rem;
-      margin-top: 1rem;
-      border: 1px solid #e9eef3;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.04);
-      transition: 0.2s;
+      padding: 2.2rem 2rem 2rem;
+      margin-top: 1.2rem;
+      border: 1px solid #f1f5f9;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.03);
+      background: #ffffff;
     }
 
     .distance-inputs {
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+      flex-direction: column;
+      gap: 1rem;
       margin-bottom: 1.8rem;
     }
 
     .input-group {
-      flex: 1 1 200px;
+      width: 100%;
     }
 
     .input-group label {
       display: block;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #334155;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
     .input-wrapper {
       display: flex;
       align-items: center;
-      background: white;
-      border-radius: 1.2rem;
-      padding: 0.3rem 0.3rem 0.3rem 1.2rem;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-      transition: 0.2s;
+      background: #ffffff;
+      border-radius: 1.4rem;
+      padding: 0.2rem 0.2rem 0.2rem 1.4rem;
+      border: 1px solid #e9eef3;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+      background: #fafbfc;
     }
 
     .input-wrapper:focus-within {
       border-color: #94a3b8;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+      background: #ffffff;
     }
 
     .input-wrapper input {
       width: 100%;
       border: none;
-      padding: 0.7rem 0;
-      font-size: 1rem;
+      padding: 0.8rem 0;
+      font-size: 1.1rem;
       font-weight: 500;
       outline: none;
       background: transparent;
       color: #0f172a;
     }
 
+    /* Стилизация плейсхолдера */
+    .input-wrapper input::placeholder {
+      color: #94a3b8;
+      font-weight: 400;
+      font-size: 0.95rem;
+      opacity: 0.8;
+      letter-spacing: 0.2px;
+      transition: opacity 0.2s;
+    }
+
+    .input-wrapper input:focus::placeholder {
+      opacity: 0.5;
+    }
+
     .input-wrapper span {
       font-weight: 600;
-      color: #475569;
-      margin-right: 0.8rem;
+      color: #334155;
+      margin-right: 0.5rem;
       background: #f1f5f9;
-      padding: 0.4rem 0.9rem;
+      padding: 0.5rem 1.1rem;
       border-radius: 2rem;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       white-space: nowrap;
+      letter-spacing: 0.3px;
     }
 
     .price-hint {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: #64748b;
-      margin-top: 0.3rem;
-      margin-left: 0.5rem;
+      margin-top: 0.4rem;
+      margin-left: 0.8rem;
+      font-weight: 500;
     }
 
     .checkboxes {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.2rem 2rem;
-      margin: 1.5rem 0 1.8rem;
+      gap: 1.3rem 2.2rem;
+      margin: 1.8rem 0 2rem;
       align-items: center;
     }
 
@@ -280,62 +311,82 @@
       gap: 0.5rem;
       cursor: pointer;
       font-weight: 500;
-      color: #1e293b;
+      color: #334155;
+      background: #f8fafc;
+      padding: 0.45rem 1.2rem;
+      border-radius: 2.5rem;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .checkbox-option:hover {
+      background: #f1f5f9;
+      border-color: #e2e8f0;
     }
 
     .checkbox-option input[type="checkbox"] {
-      width: 1.2rem;
-      height: 1.2rem;
+      width: 1.1rem;
+      height: 1.1rem;
       accent-color: #0f172a;
       border-radius: 0.4rem;
       cursor: pointer;
+      margin-right: 0.2rem;
     }
 
     .total-block {
-      background: white;
-      border-radius: 1.8rem;
-      padding: 1.4rem 1.8rem;
+      background: #f9fafc;
+      border-radius: 2rem;
+      padding: 1.5rem 1.8rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 1rem;
-      border: 1px solid #e2e8f0;
+      margin-top: 1.2rem;
+      border: 1px solid #edf2f7;
     }
 
     .total-label {
       font-weight: 600;
       font-size: 1.1rem;
-      color: #334155;
+      color: #475569;
     }
 
     .total-amount {
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: #0f172a;
       letter-spacing: -0.5px;
+      background: linear-gradient(to right, #1e293b, #334155);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .reset-btn {
       background: none;
-      border: 1px solid #cbd5e1;
+      border: 1px solid #d1d5db;
       background: white;
-      padding: 0.5rem 1.2rem;
+      padding: 0.55rem 1.3rem;
       border-radius: 2rem;
-      font-weight: 600;
-      color: #475569;
+      font-weight: 550;
+      color: #4b5563;
       cursor: pointer;
-      transition: 0.2s;
       font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.25s;
     }
 
     .reset-btn:hover {
-      background: #f1f5f9;
+      background: #f3f4f6;
+      border-color: #9ca3af;
+      color: #1f2937;
     }
 
     .footer-note {
-      margin-top: 2rem;
+      margin-top: 2.2rem;
       text-align: center;
       color: #64748b;
       font-weight: 500;
@@ -347,18 +398,18 @@
     }
 
     hr {
-      border: 0.5px solid #e2e8f0;
-      margin: 1.8rem 0 1rem;
+      border: 0.5px solid #f1f5f9;
+      margin: 2rem 0 1rem;
     }
 
     @media (max-width: 500px) {
       .checkboxes {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.9rem;
+        gap: 0.7rem;
       }
       .total-amount {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
     }
   </style>
@@ -366,7 +417,7 @@
 <body>
   <div class="site-container">
     
-    <!-- Шапка с авто -->
+    <!-- Шапка -->
     <div class="hero">
       <div class="car-badge">
         <i class="fas fa-car"></i> Skoda Octavia · Личный транспорт
@@ -377,7 +428,7 @@
       </div>
     </div>
 
-    <!-- Преимущества -->
+    <!-- Преимущества (мягкие) -->
     <div class="advantages-grid">
       <div class="advantage-card">
         <i class="fas fa-user-check"></i>
@@ -387,12 +438,12 @@
       <div class="advantage-card">
         <i class="fas fa-hand-sparkles"></i>
         <h3>Бережное отношение</h3>
-        <p>Аккуратная перевозка любого груза</p>
+        <p>Аккуратная перевозка</p>
       </div>
       <div class="advantage-card">
         <i class="fas fa-clock"></i>
         <h3>24/7 и срочно</h3>
-        <p>Ночные заказы, экспресс-доставка</p>
+        <p>Ночные и экспресс-заказы</p>
       </div>
       <div class="advantage-card">
         <i class="fas fa-comment-dots"></i>
@@ -406,44 +457,37 @@
       </div>
       <div class="advantage-card">
         <i class="fas fa-map-pin"></i>
-        <h3>МКАД и область</h3>
-        <p>Чёткие тарифы без скрытого</p>
+        <h3>МСК и область</h3>
+        <p>Честные тарифы 50₽/км</p>
       </div>
     </div>
 
-    <!-- Секция расчета маршрута -->
+    <!-- Расчет маршрута -->
     <div class="route-section">
       <div class="route-header">
         <h2>
-          <i class="fas fa-route" style="color: #0f172a;"></i> Расчет маршрута
+          <i class="fas fa-route" style="color: #334155;"></i> Расчет маршрута
         </h2>
         <a href="https://yandex.ru/maps/213/moscow/?ll=37.684143%2C55.740954&mode=routes&rtext=&rtt=auto&z=14" target="_blank" rel="noopener noreferrer" class="map-link">
-          <i class="fas fa-map-marked-alt"></i> Построить маршрут в Яндекс.Картах
+          <i class="fas fa-map-marked-alt"></i> Построить в Яндекс.Картах
         </a>
       </div>
-      <p style="color: #475569; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.95rem;">
-        Укажите километраж, чтобы рассчитать стоимость доставки.
+      <p style="color: #475569; margin-bottom: 0.3rem; font-weight: 500; font-size: 0.95rem;">
+        Укажите километраж для расчёта стоимости.
       </p>
     </div>
 
-    <!-- Калькулятор -->
+    <!-- Калькулятор (только одно поле) -->
     <div class="calculator">
       <div class="distance-inputs">
         <div class="input-group">
-          <label><i class="fas fa-circle" style="color: #16a34a; font-size: 0.7rem;"></i> В пределах МКАД</label>
+          <label><i class="fas fa-map-pin" style="color: #2563eb;"></i> Доставка МСК|МО</label>
           <div class="input-wrapper">
-            <input type="number" id="kmInside" placeholder="0" min="0" step="0.1" value="0">
-            <span>30 ₽/км</span>
+            <!-- Плейсхолдеры с примерами, которые не мешают вводу -->
+            <input type="number" id="kmDistance" placeholder="например 12.5 или 45" min="0" step="0.1">
+            <span>50 ₽/км</span>
           </div>
-          <div class="price-hint">Стоимость 1 км · 30 рублей</div>
-        </div>
-        <div class="input-group">
-          <label><i class="fas fa-circle" style="color: #2563eb; font-size: 0.7rem;"></i> За пределами МКАД</label>
-          <div class="input-wrapper">
-            <input type="number" id="kmOutside" placeholder="0" min="0" step="0.1" value="0">
-            <span>40 ₽/км</span>
-          </div>
-          <div class="price-hint">Стоимость 1 км · 40 рублей</div>
+          <div class="price-hint">Стоимость 1 км · 50 рублей (Москва и область)</div>
         </div>
       </div>
 
@@ -463,13 +507,13 @@
         </label>
       </div>
 
-      <!-- Итоговая стоимость -->
+      <!-- Итог -->
       <div class="total-block">
-        <span class="total-label">💰 Итого к оплате:</span>
+        <span class="total-label">💎 Итого к оплате:</span>
         <span class="total-amount" id="totalPrice">0 ₽</span>
         <button class="reset-btn" id="resetBtn"><i class="fas fa-undo-alt"></i> Сбросить</button>
       </div>
-      <div style="font-size: 0.8rem; color: #64748b; margin-top: 0.6rem; padding-left: 0.5rem;">
+      <div style="font-size: 0.8rem; color: #64748b; margin-top: 0.7rem; padding-left: 0.5rem;">
         * Оплата после доставки. Честные условия.
       </div>
     </div>
@@ -482,9 +526,8 @@
 
   <script>
     (function() {
-      // Элементы DOM
-      const kmInsideInput = document.getElementById('kmInside');
-      const kmOutsideInput = document.getElementById('kmOutside');
+      // DOM элементы
+      const kmInput = document.getElementById('kmDistance');
       const urgentCheck = document.getElementById('urgentCheck');
       const weekendCheck = document.getElementById('weekendCheck');
       const nightCheck = document.getElementById('nightCheck');
@@ -492,79 +535,60 @@
       const resetBtn = document.getElementById('resetBtn');
 
       // Тарифы
-      const RATE_INSIDE = 30;   // рублей за км внутри МКАД
-      const RATE_OUTSIDE = 40;  // рублей за км за МКАД
+      const RATE_PER_KM = 50; // единая ставка 50 руб/км
       const URGENT_FEE = 500;
       const WEEKEND_FEE = 200;
       const NIGHT_FEE = 300;
 
-      // Функция парсинга числа из инпута
-      function getFloatValue(inputElement) {
-        const raw = inputElement.value.trim();
+      // Получение числа из инпута
+      function getKmValue() {
+        const raw = kmInput.value.trim();
         if (raw === '') return 0;
+        // Заменяем запятую на точку
         const parsed = parseFloat(raw.replace(',', '.'));
         return isNaN(parsed) ? 0 : Math.max(0, parsed);
       }
 
-      // Основной расчет
+      // Расчет итога
       function calculateTotal() {
-        const kmInside = getFloatValue(kmInsideInput);
-        const kmOutside = getFloatValue(kmOutsideInput);
+        const km = getKmValue();
+        let total = km * RATE_PER_KM;
 
-        // Базовая стоимость по километражу
-        const insideCost = kmInside * RATE_INSIDE;
-        const outsideCost = kmOutside * RATE_OUTSIDE;
-        let total = insideCost + outsideCost;
+        if (urgentCheck.checked) total += URGENT_FEE;
+        if (weekendCheck.checked) total += WEEKEND_FEE;
+        if (nightCheck.checked) total += NIGHT_FEE;
 
-        // Добавляем опции, если отмечены
-        if (urgentCheck.checked) {
-          total += URGENT_FEE;
-        }
-        if (weekendCheck.checked) {
-          total += WEEKEND_FEE;
-        }
-        if (nightCheck.checked) {
-          total += NIGHT_FEE;
-        }
-
-        // Форматируем вывод (целое число, если нет копеек, иначе 2 знака)
+        // Форматирование
         const formatted = total % 1 === 0 ? total.toFixed(0) : total.toFixed(2);
         totalSpan.textContent = formatted + ' ₽';
       }
 
-      // Сброс всех полей
+      // Сброс
       function resetCalculator() {
-        kmInsideInput.value = 0;
-        kmOutsideInput.value = 0;
+        kmInput.value = ''; // очищаем, чтобы снова показывался плейсхолдер
         urgentCheck.checked = false;
         weekendCheck.checked = false;
         nightCheck.checked = false;
         calculateTotal();
+        // небольшая задержка для плавности, но не обязательно
       }
 
-      // Навешиваем обработчики событий
-      kmInsideInput.addEventListener('input', calculateTotal);
-      kmOutsideInput.addEventListener('input', calculateTotal);
+      // Слушатели событий
+      kmInput.addEventListener('input', calculateTotal);
       urgentCheck.addEventListener('change', calculateTotal);
       weekendCheck.addEventListener('change', calculateTotal);
       nightCheck.addEventListener('change', calculateTotal);
-      
       resetBtn.addEventListener('click', resetCalculator);
 
-      // Дополнительно: предотвращаем отрицательные значения через стрелки (min=0 уже стоит)
-      // Но на всякий случай при вводе отрицательных чисел обнуляем
-      function sanitizeNegative(event) {
-        const input = event.target;
-        if (input.value && parseFloat(input.value) < 0) {
-          input.value = 0;
+      // Дополнительно: убираем минусовые значения при ручном вводе
+      kmInput.addEventListener('change', function() {
+        if (kmInput.value && parseFloat(kmInput.value) < 0) {
+          kmInput.value = '';
         }
         calculateTotal();
-      }
+      });
 
-      kmInsideInput.addEventListener('change', sanitizeNegative);
-      kmOutsideInput.addEventListener('change', sanitizeNegative);
-      
-      // Инициализация при загрузке
+      // Инициализация
       calculateTotal();
     })();
   </script>
