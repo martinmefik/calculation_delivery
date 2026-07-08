@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Доставка на Skoda Octavia | Москва и МО</title>
-  <!-- Современный мягкий шрифт -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <!-- Иконки -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -32,12 +30,55 @@
       position: relative;
     }
 
+    /* Подсказка для активации музыки */
+    .music-hint {
+      position: fixed;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 3rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      z-index: 1000;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      animation: fadeHint 2s ease-in-out infinite;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: opacity 0.5s ease;
+    }
+
+    .music-hint.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes fadeHint {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 0.7; }
+    }
+
+    @media (max-width: 600px) {
+      .music-hint {
+        font-size: 0.8rem;
+        padding: 0.7rem 1.4rem;
+        top: 1rem;
+      }
+    }
+
     /* Кнопка управления музыкой */
     .music-toggle {
       position: fixed;
       bottom: 1.8rem;
       right: 1.8rem;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid #e2e8f0;
@@ -50,7 +91,7 @@
       font-weight: 550;
       font-size: 0.9rem;
       color: #334155;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
       z-index: 999;
       transition: all 0.25s ease;
       letter-spacing: 0.3px;
@@ -59,7 +100,7 @@
     .music-toggle:hover {
       background: #ffffff;
       border-color: #cbd5e1;
-      box-shadow: 0 16px 28px rgba(0,0,0,0.08);
+      box-shadow: 0 16px 28px rgba(0,0,0,0.12);
       transform: translateY(-2px);
     }
 
@@ -81,14 +122,10 @@
       max-width: 820px;
       width: 100%;
       margin: 0 auto;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
       background: #ffffff;
       border-radius: 3.8rem;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(0, 20, 40, 0.03);
       padding: 2.8rem 2.8rem;
-      transition: all 0.3s ease;
       border: 1px solid rgba(226, 232, 240, 0.6);
     }
 
@@ -122,7 +159,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: #f1f5f9;
+      background: #ffffff;
       color: #0f172a;
       padding: 0.5rem 1.5rem;
       border-radius: 3rem;
@@ -130,7 +167,6 @@
       font-size: 0.9rem;
       letter-spacing: 0.4px;
       margin-bottom: 1.6rem;
-      background: #ffffff;
       border: 1px solid #e9eef3;
       box-shadow: 0 4px 10px rgba(0,0,0,0.02);
     }
@@ -184,13 +220,12 @@
     }
 
     .advantage-card {
-      background: #f9fafc;
+      background: #ffffff;
       border-radius: 2rem;
       padding: 1.3rem 0.8rem;
       text-align: center;
       border: 1px solid #f1f5f9;
       box-shadow: 0 5px 12px rgba(0,0,0,0.02);
-      background: #ffffff;
     }
 
     .advantage-card:hover {
@@ -275,13 +310,12 @@
     }
 
     .calculator {
-      background: #fcfcfd;
+      background: #ffffff;
       border-radius: 2.5rem;
       padding: 2.2rem 2rem 2rem;
       margin-top: 1.2rem;
       border: 1px solid #f1f5f9;
       box-shadow: 0 12px 28px rgba(0,0,0,0.03);
-      background: #ffffff;
     }
 
     @media (max-width: 500px) {
@@ -311,12 +345,11 @@
     .input-wrapper {
       display: flex;
       align-items: center;
-      background: #ffffff;
+      background: #fafbfc;
       border-radius: 1.4rem;
       padding: 0.2rem 0.2rem 0.2rem 1.4rem;
       border: 1px solid #e9eef3;
       box-shadow: 0 3px 8px rgba(0,0,0,0.02);
-      background: #fafbfc;
     }
 
     .input-wrapper:focus-within {
@@ -442,8 +475,6 @@
     .total-amount {
       font-size: 2.5rem;
       font-weight: 700;
-      color: #0f172a;
-      letter-spacing: -0.5px;
       background: linear-gradient(to right, #1e293b, #334155);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -457,9 +488,8 @@
     }
 
     .reset-btn {
-      background: none;
-      border: 1px solid #d1d5db;
       background: white;
+      border: 1px solid #d1d5db;
       padding: 0.55rem 1.3rem;
       border-radius: 2rem;
       font-weight: 550;
@@ -469,7 +499,6 @@
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      transition: all 0.25s;
     }
 
     .reset-btn:hover {
@@ -498,15 +527,19 @@
   </style>
 </head>
 <body>
+  <!-- Подсказка для активации музыки -->
+  <div class="music-hint" id="musicHint">
+    <i class="fas fa-music"></i>
+    <span>Нажмите в любое место для музыки 🎵</span>
+  </div>
+
   <!-- Кнопка управления музыкой -->
   <div class="music-toggle" id="musicToggle">
-    <i class="fas fa-volume-up" id="musicIcon"></i>
-    <span id="musicText">Выкл. музыку</span>
+    <i class="fas fa-volume-mute" id="musicIcon"></i>
+    <span id="musicText">Вкл. музыку</span>
   </div>
 
   <div class="site-container">
-    
-    <!-- Шапка -->
     <div class="hero">
       <div class="car-badge">
         <i class="fas fa-car"></i> Skoda Octavia · Личный транспорт
@@ -517,7 +550,6 @@
       </div>
     </div>
 
-    <!-- Преимущества -->
     <div class="advantages-grid">
       <div class="advantage-card">
         <i class="fas fa-user-check"></i>
@@ -551,7 +583,6 @@
       </div>
     </div>
 
-    <!-- Расчет маршрута -->
     <div class="route-section">
       <div class="route-header">
         <h2>
@@ -566,7 +597,6 @@
       </p>
     </div>
 
-    <!-- Калькулятор -->
     <div class="calculator">
       <div class="distance-inputs">
         <div class="input-group">
@@ -610,86 +640,78 @@
     </div>
   </div>
 
-  <!-- Аудио элемент -->
   <audio id="bgMusic" loop preload="auto">
     <source src="music.mp3" type="audio/mpeg">
-    Ваш браузер не поддерживает аудио.
   </audio>
 
   <script>
     (function() {
-      // --- Музыка (автозапуск) ---
       const bgMusic = document.getElementById('bgMusic');
       const musicToggle = document.getElementById('musicToggle');
       const musicIcon = document.getElementById('musicIcon');
       const musicText = document.getElementById('musicText');
+      const musicHint = document.getElementById('musicHint');
 
-      // Громкость 5%
       bgMusic.volume = 0.05;
-      
       let musicPlaying = false;
 
-      // Функция обновления иконки кнопки
-      function updateMusicButton() {
+      function updateUI() {
         if (musicPlaying) {
           musicIcon.className = 'fas fa-volume-up';
           musicText.textContent = 'Выкл. музыку';
+          musicHint.classList.add('hidden');
         } else {
           musicIcon.className = 'fas fa-volume-mute';
           musicText.textContent = 'Вкл. музыку';
+          musicHint.classList.remove('hidden');
         }
       }
 
-      // Попытка автоматического воспроизведения сразу
-      function attemptAutoPlay() {
-        bgMusic.play().then(() => {
-          musicPlaying = true;
-          updateMusicButton();
-        }).catch(() => {
-          // Автовоспроизведение заблокировано браузером
-          musicPlaying = false;
-          updateMusicButton();
-          // Добавляем однократный слушатель на весь документ, чтобы запустить при первом клике
-          document.body.addEventListener('click', function startOnInteraction() {
-            if (!musicPlaying) {
-              bgMusic.play().then(() => {
-                musicPlaying = true;
-                updateMusicButton();
-              }).catch(() => {});
-            }
-          }, { once: true });
-        });
+      // Функция запуска музыки
+      function startMusic() {
+        if (!musicPlaying) {
+          bgMusic.play().then(() => {
+            musicPlaying = true;
+            updateUI();
+          }).catch(() => {
+            // всё ещё заблокировано
+            musicPlaying = false;
+            updateUI();
+          });
+        }
       }
 
-      // Ручное управление кнопкой
+      // Главный трюк: любые события пользователя запускают музыку
+      const events = ['click', 'touchstart', 'scroll', 'keydown'];
+      events.forEach(eventType => {
+        document.body.addEventListener(eventType, startMusic, { once: true });
+      });
+
+      // Кнопка переключения
       musicToggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // чтобы не сработал глобальный обработчик клика
+        e.stopPropagation();
         if (musicPlaying) {
           bgMusic.pause();
           musicPlaying = false;
         } else {
           bgMusic.play().then(() => {
             musicPlaying = true;
-          }).catch(err => {
-            console.warn('Не удалось воспроизвести:', err);
+          }).catch(() => {
             musicPlaying = false;
           });
-          musicPlaying = true; // оптимистичное переключение
+          musicPlaying = true;
         }
-        updateMusicButton();
-        // Синхронизация состояния через небольшую задержку
+        updateUI();
         setTimeout(() => {
           musicPlaying = !bgMusic.paused;
-          updateMusicButton();
+          updateUI();
         }, 50);
       });
 
-      // Запускаем автоматическое воспроизведение при загрузке
-      window.addEventListener('load', () => {
-        attemptAutoPlay();
-      });
+      // Начальная установка
+      updateUI();
 
-      // --- Калькулятор ---
+      // Калькулятор
       const kmInput = document.getElementById('kmDistance');
       const urgentCheck = document.getElementById('urgentCheck');
       const weekendCheck = document.getElementById('weekendCheck');
@@ -697,50 +719,27 @@
       const totalSpan = document.getElementById('totalPrice');
       const resetBtn = document.getElementById('resetBtn');
 
-      const RATE_PER_KM = 50;
-      const URGENT_FEE = 500;
-      const WEEKEND_FEE = 200;
-      const NIGHT_FEE = 300;
+      const RATE = 50, URGENT = 500, WEEKEND = 200, NIGHT = 300;
 
-      function getKmValue() {
-        const raw = kmInput.value.trim();
-        if (raw === '') return 0;
-        const parsed = parseFloat(raw.replace(',', '.'));
-        return isNaN(parsed) ? 0 : Math.max(0, parsed);
+      function calc() {
+        const km = parseFloat(kmInput.value.replace(',', '.')) || 0;
+        let total = Math.max(0, km) * RATE;
+        if (urgentCheck.checked) total += URGENT;
+        if (weekendCheck.checked) total += WEEKEND;
+        if (nightCheck.checked) total += NIGHT;
+        totalSpan.textContent = (total % 1 === 0 ? total.toFixed(0) : total.toFixed(2)) + ' ₽';
       }
 
-      function calculateTotal() {
-        const km = getKmValue();
-        let total = km * RATE_PER_KM;
-        if (urgentCheck.checked) total += URGENT_FEE;
-        if (weekendCheck.checked) total += WEEKEND_FEE;
-        if (nightCheck.checked) total += NIGHT_FEE;
-        const formatted = total % 1 === 0 ? total.toFixed(0) : total.toFixed(2);
-        totalSpan.textContent = formatted + ' ₽';
-      }
-
-      function resetCalculator() {
+      kmInput.addEventListener('input', calc);
+      urgentCheck.addEventListener('change', calc);
+      weekendCheck.addEventListener('change', calc);
+      nightCheck.addEventListener('change', calc);
+      resetBtn.addEventListener('click', () => {
         kmInput.value = '';
-        urgentCheck.checked = false;
-        weekendCheck.checked = false;
-        nightCheck.checked = false;
-        calculateTotal();
-      }
-
-      kmInput.addEventListener('input', calculateTotal);
-      urgentCheck.addEventListener('change', calculateTotal);
-      weekendCheck.addEventListener('change', calculateTotal);
-      nightCheck.addEventListener('change', calculateTotal);
-      resetBtn.addEventListener('click', resetCalculator);
-
-      kmInput.addEventListener('change', function() {
-        if (kmInput.value && parseFloat(kmInput.value) < 0) {
-          kmInput.value = '';
-        }
-        calculateTotal();
+        urgentCheck.checked = weekendCheck.checked = nightCheck.checked = false;
+        calc();
       });
-
-      calculateTotal();
+      calc();
     })();
   </script>
 </body>
