@@ -1,3 +1,6 @@
+Вот обновлённый код. Я изменил стоимость доставки в выходные/праздничные дни на 300₽ и добавил две новые опции: «Погрузка тяжелого груза» (+500₽) и «От двери до двери» (+200₽).
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -567,11 +570,19 @@
         </label>
         <label class="checkbox-option">
           <input type="checkbox" id="weekendCheck">
-          <span>📅 Выходной день <strong>+200 ₽</strong></span>
+          <span>📅 Выходные и праздники <strong>+300 ₽</strong></span>
         </label>
         <label class="checkbox-option">
           <input type="checkbox" id="nightCheck">
-          <span>🌙 Ночная доставка <strong>+300 ₽</strong></span>
+          <span>🌙 Ночная доставка <strong>+300 ₽</strong> (22:00–07:00)</span>
+        </label>
+        <label class="checkbox-option">
+          <input type="checkbox" id="heavyCheck">
+          <span>🏋️ Погрузка тяжелого груза <strong>+500 ₽</strong></span>
+        </label>
+        <label class="checkbox-option">
+          <input type="checkbox" id="doorCheck">
+          <span>🚪 От двери до двери <strong>+200 ₽</strong></span>
         </label>
       </div>
 
@@ -615,7 +626,6 @@
         }
       }
 
-      // Запуск музыки при первом взаимодействии
       function startMusic() {
         if (!musicPlaying) {
           bgMusic.play().then(() => {
@@ -628,13 +638,11 @@
         }
       }
 
-      // Слушаем все возможные события взаимодействия
       const events = ['click', 'touchstart', 'scroll', 'keydown'];
       events.forEach(eventType => {
         document.body.addEventListener(eventType, startMusic, { once: true });
       });
 
-      // Кнопка переключения
       musicToggle.addEventListener('click', (e) => {
         e.stopPropagation();
         if (musicPlaying) {
@@ -662,10 +670,17 @@
       const urgentCheck = document.getElementById('urgentCheck');
       const weekendCheck = document.getElementById('weekendCheck');
       const nightCheck = document.getElementById('nightCheck');
+      const heavyCheck = document.getElementById('heavyCheck');
+      const doorCheck = document.getElementById('doorCheck');
       const totalSpan = document.getElementById('totalPrice');
       const resetBtn = document.getElementById('resetBtn');
 
-      const RATE = 50, URGENT = 500, WEEKEND = 200, NIGHT = 300;
+      const RATE = 50;
+      const URGENT = 500;
+      const WEEKEND = 300;
+      const NIGHT = 300;
+      const HEAVY = 500;
+      const DOOR = 200;
 
       function calc() {
         const km = parseFloat(kmInput.value.replace(',', '.')) || 0;
@@ -673,6 +688,8 @@
         if (urgentCheck.checked) total += URGENT;
         if (weekendCheck.checked) total += WEEKEND;
         if (nightCheck.checked) total += NIGHT;
+        if (heavyCheck.checked) total += HEAVY;
+        if (doorCheck.checked) total += DOOR;
         totalSpan.textContent = (total % 1 === 0 ? total.toFixed(0) : total.toFixed(2)) + ' ₽';
       }
 
@@ -680,9 +697,15 @@
       urgentCheck.addEventListener('change', calc);
       weekendCheck.addEventListener('change', calc);
       nightCheck.addEventListener('change', calc);
+      heavyCheck.addEventListener('change', calc);
+      doorCheck.addEventListener('change', calc);
       resetBtn.addEventListener('click', () => {
         kmInput.value = '';
-        urgentCheck.checked = weekendCheck.checked = nightCheck.checked = false;
+        urgentCheck.checked = false;
+        weekendCheck.checked = false;
+        nightCheck.checked = false;
+        heavyCheck.checked = false;
+        doorCheck.checked = false;
         calc();
       });
       calc();
@@ -690,3 +713,4 @@
   </script>
 </body>
 </html>
+```
